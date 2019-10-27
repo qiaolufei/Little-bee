@@ -1,39 +1,40 @@
 module.exports = {
   pages: [{
-    path: 'pages/index'
+    path: 'pages/purchase'
+  }, {
+    path: 'pages/seats'
+  }, {
+    path: 'pages/user'
   }, {
     path: 'pages/logs',
     config: {
       navigationBarTitleText: '查看启动日志'
     }
-  }, {
-    path: 'pages/counter',
-    config: {
-      usingComponents: {
-        "wux-icon": "../static/wux/icon/index",
-        "wux-button": "../static/wux/button/index"
-      }
-    }
   }],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
-    navigationBarTitleText: 'WeChat',
+    navigationBarTitleText: '小蜜蜂',
     navigationBarTextStyle: 'black'
   },
   tabBar: {
     color: '#999',
-    backgroundColor: '#fafafa',
+    backgroundColor: '#fff',
     selectedColor: '#333',
     borderStyle: 'white',
     list: [{
-      text: '首页',
-      pagePath: 'pages/index',
+      text: '购买套餐',
+      pagePath: 'pages/purchase',
       iconPath: 'static/tabs/home.png',
       selectedIconPath: 'static/tabs/home-active.png'
     }, {
-      text: '订单',
-      pagePath: 'pages/logs',
+      text: '预定座位',
+      pagePath: 'pages/seats',
+      iconPath: 'static/tabs/orders.png',
+      selectedIconPath: 'static/tabs/orders-active.png'
+    }, {
+      text: '我的',
+      pagePath: 'pages/user',
       iconPath: 'static/tabs/orders.png',
       selectedIconPath: 'static/tabs/orders-active.png'
     }],
