@@ -1,20 +1,18 @@
 module.exports = {
-  pages: [{
-    path: 'pages/purchase'
-  }, {
-    path: 'pages/seats'
-  }, {
-    path: 'pages/user'
-  }, {
-    path: 'pages/logs',
-    config: {
-      navigationBarTitleText: '查看启动日志'
-    }
-  }],
+  pages: [
+    {path: 'pages/purchase'},
+    {path: 'pages/seats'},
+    {path: 'pages/user'},
+    {path: 'pages/user/suggest'},
+    {path: 'pages/logs',
+      config: {
+        navigationBarTitleText: '查看启动日志'
+      }
+    }],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
-    navigationBarTitleText: '小蜜蜂',
+    navigationBarTitleText: '小蜜蜂自习室',
     navigationBarTextStyle: 'black'
   },
   tabBar: {
