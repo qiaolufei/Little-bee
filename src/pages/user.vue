@@ -1,5 +1,6 @@
 <template>
     <div>
+        <img src="../imgs/home-active.png" alt="" style="display:none">
         <div class="user">
             <img class="user__head" src="../imgs/head.jpg" >
             <span class="user__name">乔路非</span>
@@ -13,9 +14,9 @@
             <span class="menu__choose" v-if="item.name == '我的余额'">260元</span>
             <span class="menu__choose" v-else-if="item.name == '我的积分'">
                 <span>26分&emsp;</span>
-                <span>></span>
+                <span><wux-icon type="ios-arrow-forward" size="20"/></span>
             </span>
-            <span v-else class="menu__choose">></span>
+            <span v-else class="menu__choose"><wux-icon type="ios-arrow-forward" size="20"/></span>
         </div>
         </div>
     </div>
@@ -31,7 +32,7 @@ export default {
         {icon: '../imgs/home-active.png', name: '我的积分'},
         {icon: '../imgs/home-active.png', name: '我的订单'},
         {icon: '../imgs/home-active.png', name: '我的预约'},
-        {icon: '../imgs/home-active.png', name: '兑换卡劵'},
+        {icon: '../imgs/home-active.png', name: '兑换卡劵', url: './user/exchange'},
         {icon: '../imgs/home-active.png', name: '分享'},
         {icon: '../imgs/home-active.png', name: '意见反馈', url: './user/suggest'}]
     }
@@ -39,7 +40,6 @@ export default {
   methods: {
     to (url) {
       wx.navigateTo({url: url})
-      console.log(url)
     }
   },
   mounted () {

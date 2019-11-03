@@ -3,6 +3,7 @@ module.exports = {
     {path: 'pages/purchase'},
     {path: 'pages/seats'},
     {path: 'pages/user'},
+    {path: 'pages/user/exchange'},
     {path: 'pages/user/suggest'},
     {path: 'pages/logs',
       config: {
@@ -40,6 +41,7 @@ module.exports = {
   },
   // 全局引入组件
   usingComponents: {
-    'wux-search-bar': '../static/wux/search-bar/index'
+    'wux-search-bar': '../static/wux/search-bar/index',
+    "wux-icon": "../static/wux/icon/index"
   }
 }
