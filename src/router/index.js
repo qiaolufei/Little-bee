@@ -1,10 +1,12 @@
 module.exports = {
   pages: [
     {path: 'pages/purchase'},
-    {path: 'pages/seats'},
+    {path: 'pages/reserve'},
     {path: 'pages/user'},
     {path: 'pages/user/exchange'},
     {path: 'pages/user/suggest'},
+    {path: 'pages/reserve/seats'},
+    {path: 'pages/reserve/order'},
     {path: 'pages/logs',
       config: {
         navigationBarTitleText: '查看启动日志'
@@ -28,7 +30,7 @@ module.exports = {
       selectedIconPath: 'static/tabs/home-active.png'
     }, {
       text: '预定座位',
-      pagePath: 'pages/seats',
+      pagePath: 'pages/reserve',
       iconPath: 'static/tabs/orders.png',
       selectedIconPath: 'static/tabs/orders-active.png'
     }, {
