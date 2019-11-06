@@ -34,7 +34,22 @@ export default {
     placeChange (e) {
       this.place = this.placeList[e.mp.detail.value]
     },
-    subbmit () {}
+    submit () {
+      wx.showToast({
+        title: '提交成功', //提示的内容,
+        icon: 'success', //图标,
+        duration: 1000, //延迟时间,
+        mask: true, //显示透明蒙层，防止触摸穿透,
+        success: res => {
+          // 延迟两秒后跳转
+          let t;
+          clearTimeout(t)
+          t = setTimeout(function () {
+            wx.switchTab({ url: '../user' });
+          }, 2000);
+        }
+      })
+    }
   },
   mounted () {
     wx.setNavigationBarTitle({title: '意见反馈'})
