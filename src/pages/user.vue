@@ -28,10 +28,10 @@ export default {
       "navigationBarTitleText": "我的",
       menu: [
         {icon: '../imgs/home-active.png', name: '我的余额'},
-        {icon: '../imgs/home-active.png', name: '我的卡包'},
-        {icon: '../imgs/home-active.png', name: '我的积分'},
-        {icon: '../imgs/home-active.png', name: '我的订单'},
-        {icon: '../imgs/home-active.png', name: '我的预约'},
+        {icon: '../imgs/home-active.png', name: '我的卡包', url: './user/cards'},
+        {icon: '../imgs/home-active.png', name: '我的积分', url: './user/points'},
+        {icon: '../imgs/home-active.png', name: '我的订单', url: './user/orders'},
+        {icon: '../imgs/home-active.png', name: '我的预约', url: './user/appointment'},
         {icon: '../imgs/home-active.png', name: '兑换卡劵', url: './user/exchange'},
         {icon: '../imgs/home-active.png', name: '分享'},
         {icon: '../imgs/home-active.png', name: '意见反馈', url: './user/suggest'}]
