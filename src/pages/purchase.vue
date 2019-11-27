@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- 套餐卡片 -->
-        <div v-for="(item,index) in taocan" :key="index" class="taocan">
+        <div v-for="(item,index) in taocan" :key="index" class="taocan" @click="toInfo()">
             <span class="taocan__name">{{item.name}}</span>
             <span class="taocan__price">{{item.price}}元</span>
             <h3 class="taocan__deadline">使用期限：{{item.deadline}}</h3>
@@ -17,6 +17,12 @@ export default {
         {name: '勤奋好学月卡（济南）', price: '400', deadline: '购买后30天有效', area: '济南内所有分店'},
         {name: '300充500储值卡', price: '300', deadline: '购买后永久有效', area: '全国所有分店'}
       ]
+    }
+  },
+  methods: {
+    toInfo () {
+      let url = './purchase/info'
+      wx.navigateTo({url: url})
     }
   },
   mounted () {

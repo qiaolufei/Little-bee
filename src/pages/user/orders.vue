@@ -19,7 +19,7 @@ export default {
     }
   },
   mounted () {
-    wx.setNavigationBarTitle({title: '我的卡包'})
+    wx.setNavigationBarTitle({title: '我的订单'})
   }
 }
 </script>

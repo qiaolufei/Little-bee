@@ -1,6 +1,14 @@
 <template>
     <div>
-        <img src="../imgs/home-active.png" alt="" style="display:none">
+        <!-- 预先加载图片素材 -->
+        <img src="../imgs/icon/balance.png" alt="" style="display:none">
+        <img src="../imgs/icon/cards.png" alt="" style="display:none">
+        <img src="../imgs/icon/points.png" alt="" style="display:none">
+        <img src="../imgs/icon/orders.png" alt="" style="display:none">
+        <img src="../imgs/icon/appointment.png" alt="" style="display:none">
+        <img src="../imgs/icon/exchange.png" alt="" style="display:none">
+        <img src="../imgs/icon/share.png" alt="" style="display:none">
+        <img src="../imgs/icon/suggest.png" alt="" style="display:none">
         <div class="user">
             <img class="user__head" src="../imgs/head.jpg" >
             <span class="user__name">乔路非</span>
@@ -27,14 +35,14 @@ export default {
     return {
       "navigationBarTitleText": "我的",
       menu: [
-        {icon: '../imgs/home-active.png', name: '我的余额'},
-        {icon: '../imgs/home-active.png', name: '我的卡包', url: './user/cards'},
-        {icon: '../imgs/home-active.png', name: '我的积分', url: './user/points'},
-        {icon: '../imgs/home-active.png', name: '我的订单', url: './user/orders'},
-        {icon: '../imgs/home-active.png', name: '我的预约', url: './user/appointment'},
-        {icon: '../imgs/home-active.png', name: '兑换卡劵', url: './user/exchange'},
-        {icon: '../imgs/home-active.png', name: '分享'},
-        {icon: '../imgs/home-active.png', name: '意见反馈', url: './user/suggest'}]
+        {icon: '../imgs/icon/balance.png', name: '我的余额'},
+        {icon: '../imgs/icon/cards.png', name: '我的卡包', url: './user/cards'},
+        {icon: '../imgs/icon/points.png', name: '我的积分', url: './user/points'},
+        {icon: '../imgs/icon/orders.png', name: '我的订单', url: './user/orders'},
+        {icon: '../imgs/icon/appointment.png', name: '我的预约', url: './user/appointment'},
+        {icon: '../imgs/icon/exchange.png', name: '兑换卡劵', url: './user/exchange'},
+        {icon: '../imgs/icon/share.png', name: '分享'},
+        {icon: '../imgs/icon/suggest.png', name: '意见反馈', url: './user/suggest'}]
     }
   },
   methods: {
@@ -50,6 +58,8 @@ export default {
 <style lang="less">
     .user{
         text-align: center;
+        background: url('../imgs/icon/back.png');
+        background-size:100% 145%;
         &__head{
             border-radius: 50%;
             width: 85px;

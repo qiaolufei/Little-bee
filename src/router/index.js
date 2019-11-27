@@ -9,8 +9,11 @@ module.exports = {
     {path: 'pages/user/cards'},
     {path: 'pages/user/orders'},
     {path: 'pages/user/points'},
-    {path: 'pages/reserve/seats'},
     {path: 'pages/reserve/order'},
+    {path: 'pages/tips/purchaseSuc.vue'},
+    {path: 'pages/tips/appointmentSuc.vue'},
+    {path: 'pages/purchase/info'},
+    {path: 'pages/reserve/seats'},
     {path: 'pages/logs',
       config: {
         navigationBarTitleText: '查看启动日志'
@@ -30,18 +33,18 @@ module.exports = {
     list: [{
       text: '购买套餐',
       pagePath: 'pages/purchase',
-      iconPath: 'static/tabs/home.png',
-      selectedIconPath: 'static/tabs/home-active.png'
+      iconPath: 'static/tabs/icon1.png',
+      selectedIconPath: 'static/tabs/icon1-active.png'
     }, {
       text: '预定座位',
       pagePath: 'pages/reserve',
-      iconPath: 'static/tabs/orders.png',
-      selectedIconPath: 'static/tabs/orders-active.png'
+      iconPath: 'static/tabs/icon2.png',
+      selectedIconPath: 'static/tabs/icon2-active.png'
     }, {
       text: '我的',
       pagePath: 'pages/user',
-      iconPath: 'static/tabs/orders.png',
-      selectedIconPath: 'static/tabs/orders-active.png'
+      iconPath: 'static/tabs/icon3.png',
+      selectedIconPath: 'static/tabs/icon3-active.png'
     }],
     position: 'bottom'
   },
