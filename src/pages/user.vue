@@ -1,22 +1,13 @@
 <template>
     <div>
-        <!-- 预先加载图片素材 -->
-        <img src="../imgs/icon/balance.png" alt="" style="display:none">
-        <img src="../imgs/icon/cards.png" alt="" style="display:none">
-        <img src="../imgs/icon/points.png" alt="" style="display:none">
-        <img src="../imgs/icon/orders.png" alt="" style="display:none">
-        <img src="../imgs/icon/appointment.png" alt="" style="display:none">
-        <img src="../imgs/icon/exchange.png" alt="" style="display:none">
-        <img src="../imgs/icon/share.png" alt="" style="display:none">
-        <img src="../imgs/icon/suggest.png" alt="" style="display:none">
         <div class="user">
-            <img class="user__head" src="../imgs/head.jpg" >
-            <span class="user__name">乔路非</span>
+            <img :v-if="userInfo.headUrl" class="user__head" :src=userInfo.headUrl >
+            <span class="user__name">{{userInfo.name}}</span>
             <span class="user__vip">普通会员</span>
         </div>
         <div style="margin-top:10%">
         <div v-for="(item, index) in menu" :key="index" class="menu" @click="to(item.url)">
-            <img :src=item.icon class="menu__img">
+            <img :v-if="item.icon" :src=item.icon class="menu__img">
             <span class="menu__name">{{item.name}}</span>
             <!-- 根据menu来判断后面的元素内容 -->
             <span class="menu__choose" v-if="item.name == '我的余额'">260元</span>
@@ -42,8 +33,14 @@ export default {
         {icon: '../imgs/icon/appointment.png', name: '我的预约', url: './user/appointment'},
         {icon: '../imgs/icon/exchange.png', name: '兑换卡劵', url: './user/exchange'},
         {icon: '../imgs/icon/share.png', name: '分享'},
-        {icon: '../imgs/icon/suggest.png', name: '意见反馈', url: './user/suggest'}]
+        {icon: '../imgs/icon/suggest.png', name: '意见反馈', url: './user/suggest'}],
+      userInfo: {
+        headUrl: '',
+        name: ''
+      }
     }
+  },
+  created () {
   },
   methods: {
     to (url) {
@@ -51,6 +48,15 @@ export default {
     }
   },
   mounted () {
+    var _this = this
+    wx.getStorage({
+      key: 'user',
+      success (res) {
+        console.log(res.data)
+        _this.userInfo.headUrl = res.data.avatarUrl
+        _this.userInfo.name = res.data.nickName
+      }
+    })
     wx.setNavigationBarTitle({title: '我的'})
   }
 }

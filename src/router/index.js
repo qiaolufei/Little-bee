@@ -14,6 +14,7 @@ module.exports = {
     {path: 'pages/tips/appointmentSuc.vue'},
     {path: 'pages/purchase/info'},
     {path: 'pages/reserve/seats'},
+    {path: 'pages/login'},
     {path: 'pages/logs',
       config: {
         navigationBarTitleText: '查看启动日志'

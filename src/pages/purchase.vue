@@ -29,7 +29,7 @@ export default {
     wx.setNavigationBarTitle({title: '购买套餐'})
   }
 }
-</script>
+</script> 
 <style lang="less">
     .taocan{
         width:90%;

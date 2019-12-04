@@ -1,14 +1,41 @@
 <script>
 export default {
   created () {
-    // 调用API从本地缓存中获取数据
-    /*
-     * 平台 api 差异的处理方式:  api 方法统一挂载到 mpvue 名称空间, 平台判断通过 mpvuePlatform 特征字符串
-     * 微信：mpvue === wx, mpvuePlatform === 'wx'
-     * 头条：mpvue === tt, mpvuePlatform === 'tt'
-     * 百度：mpvue === swan, mpvuePlatform === 'swan'
-     * 支付宝(蚂蚁)：mpvue === my, mpvuePlatform === 'my'
-     */
+    // 查看是否授权
+    wx.getSetting({
+      success: function(res) {
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success: function(res) {
+            // 在用户授权成功后，调用微信的 wx.login 接口，从而获取code
+              wx.login({
+                success: res => {
+                  // 获取到用户的code
+                  console.log("用户的code:" + res.code)
+                  // 可以传给后台，再经过解析获取用户的 openid
+                  // 或者可以直接使用微信的提供的接口直接获取 openid ，方法如下：
+                  wx.request({
+                    // 自行补上自己的 APPID 和 SECRET
+                    url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wxa8bf75d050eceec7&secret=0a54a9dee9eef51bfe858fd4ee3f6106&js_code=' + res.code + '&grant_type=authorization_code',
+                    success: res => {
+                      // 获取到用户的 openid
+                      // console.log("用户的openid:" + res.data.openid);
+                    }
+                  });
+                }
+              })
+              let url = './purchase'
+              wx.switchTab({ url: url });
+            }
+          });
+        } else {
+          // 用户没有授权,显示授权页面
+          console.log('no')
+          let url = './login'
+          wx.reLaunch({ url: url });
+        }
+      }
+    })
     let logs
     if (mpvuePlatform === 'my') {
       logs = mpvue.getStorageSync({key: 'logs'}).data || []
